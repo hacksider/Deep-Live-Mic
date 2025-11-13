@@ -9,9 +9,9 @@ import numpy as np
 now_dir = os.getcwd()
 sys.path.append(now_dir)
 
-from applio_code.rvc.realtime.utils.torch import circular_write
-from applio_code.rvc.realtime.utils.vad import VADProcessor
-from applio_code.rvc.realtime.pipeline import create_pipeline
+from programs.applio_code.rvc.realtime.utils.torch import circular_write
+from programs.applio_code.rvc.realtime.utils.vad import VADProcessor
+from programs.applio_code.rvc.realtime.pipeline import create_pipeline
 
 SAMPLE_RATE = 16000
 AUDIO_SAMPLE_RATE = 48000
@@ -223,7 +223,9 @@ class Realtime:
         return audio_out, vol
 
     def __del__(self):
-        del self.pipeline
+        pipeline = getattr(self, "pipeline", None)
+        if pipeline is not None:
+            del pipeline
 
 
 class VoiceChanger:

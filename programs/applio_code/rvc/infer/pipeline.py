@@ -93,13 +93,27 @@ class Autotune:
     A class for applying autotune to a given fundamental frequency (F0) contour.
     """
 
-    def __init__(self, ref_freqs):
+    def __init__(self, ref_freqs=None):
         """
         Initializes the Autotune class with a set of reference frequencies.
 
         Args:
             ref_freqs: A list of reference frequencies representing musical notes.
         """
+        if ref_freqs is None:
+            ref_freqs = [
+                65.41,
+                82.41,
+                110.00,
+                146.83,
+                196.00,
+                246.94,
+                329.63,
+                440.00,
+                587.33,
+                783.99,
+                1046.50,
+            ]
         self.ref_freqs = ref_freqs
         self.note_dict = self.generate_interpolated_frequencies()
 

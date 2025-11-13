@@ -11,12 +11,12 @@ from torch import Tensor
 now_dir = os.getcwd()
 sys.path.append(now_dir)
 
-from applio_code.rvc.realtime.utils.torch import circular_write
-from applio_code.rvc.configs.config import Config
-from applio_code.rvc.infer.pipeline import Autotune, AudioProcessor
-from applio_code.rvc.lib.algorithm.synthesizers import Synthesizer
-from applio_code.rvc.lib.predictors.f0 import FCPE, RMVPE, SWIFT
-from applio_code.rvc.lib.utils import load_embedding, HubertModelWithFinalProj
+from programs.applio_code.rvc.realtime.utils.torch import circular_write
+from programs.applio_code.rvc.configs.config import Config
+from programs.applio_code.rvc.infer.pipeline import Autotune, AudioProcessor
+from programs.applio_code.rvc.lib.algorithm.synthesizers import Synthesizer
+from programs.applio_code.rvc.lib.predictors.f0 import FCPE, RMVPE, SWIFT
+from programs.applio_code.rvc.lib.utils import load_embedding, HubertModelWithFinalProj
 
 
 class RealtimeVoiceConverter:
@@ -68,6 +68,7 @@ class RealtimeVoiceConverter:
                 use_f0=self.use_f0,
                 text_enc_hidden_dim=self.text_enc_hidden_dim,
                 vocoder=self.vocoder,
+                is_half=self.config.is_half,
             )
 
             self.net_g.load_state_dict(self.cpt["weight"], strict=False)

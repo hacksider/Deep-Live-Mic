@@ -10,7 +10,7 @@ from dataclasses import dataclass
 now_dir = os.getcwd()
 sys.path.append(now_dir)
 
-from rvc.realtime.core import AUDIO_SAMPLE_RATE
+from programs.applio_code.rvc.realtime.core import AUDIO_SAMPLE_RATE
 
 
 @dataclass

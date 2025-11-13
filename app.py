@@ -4,6 +4,7 @@ import gradio as gr
 from tabs.full_inference import full_inference_tab
 from tabs.download_model import download_model_tab
 from tabs.tts import tts_tab
+from tabs.realtime import realtime_tab
 from tabs.settings import lang_tab, audio_tab, performance_tab, notifications_tab, file_management_tab, debug_tab, backup_restore_tab, misc_tab, restart_tab
 from assets.i18n.i18n import I18nAuto
 from argparse import ArgumentParser 
@@ -34,6 +35,9 @@ def main():
         
         with gr.Tab(i18n("Full Inference")):
             full_inference_tab()
+        
+        with gr.Tab(i18n("Realtime Voice Changer")):
+            realtime_tab()
             
         with gr.Tab(i18n("Download Model")):
             download_model_tab()

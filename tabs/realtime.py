@@ -11,19 +11,23 @@ from programs.applio_code.rvc.realtime.callbacks import AudioCallbacks
 from programs.applio_code.rvc.realtime.audio import list_audio_device
 from programs.applio_code.rvc.realtime.core import AUDIO_SAMPLE_RATE
 
-from tabs.full_inference import (
+from tabs.infer.variable import (
     i18n,
     names,
-    default_weight,
     get_indexes,
-    extract_model_and_epoch,
     match_index,
+    model_root_relative,
+)
+from tabs.settinginf import (
+    extract_model_and_epoch,
     get_speakers_id,
     create_folder_and_move_files,
     refresh_embedders_folders,
     custom_embedder_root_relative,
-    model_root_relative,
 )
+
+# Calculate default_weight locally
+default_weight = names[0] if names else None
 
 PASS_THROUGH = False
 interactive_true = gr.update(interactive=True)

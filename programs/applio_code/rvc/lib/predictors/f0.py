@@ -1,7 +1,7 @@
 import os
 import torch
 
-from applio_code.rvc.lib.predictors.RMVPE import RMVPE0Predictor
+from programs.applio_code.rvc.lib.predictors.RMVPE import RMVPE0Predictor
 from torchfcpe import spawn_bundled_infer_model
 import torchcrepe
 from swift_f0 import SwiftF0
