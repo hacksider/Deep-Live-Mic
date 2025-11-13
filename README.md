@@ -1,7 +1,7 @@
 <div align="center">
 
-# 🚀 Advanced RVC Inference V3.1
-**Revolutionizing Voice Conversion with State-of-the-Art AI Technology**
+# Deep-Live-Mic
+**Simplifying RVC**
 
 ---
 
@@ -14,8 +14,8 @@
 ---
 
 **The Ultimate Voice Conversion Experience - Powered by Advanced AI Algorithms**
-
-
+**Forked from Advanced RVC Inference V3.1
+The focus of this fork is to simplify RVC. Just upload a voice, and play with it. 2 Steps, nothing more.
 
 </div>
 
